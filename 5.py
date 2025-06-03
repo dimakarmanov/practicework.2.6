@@ -1,25 +1,8 @@
-class KgToPounds:
-    def __init__(self, kg):
-        self.__kg = kg
-
-    def to_pounds(self):
-        return self.__kg * 2.205
-
-    @property
-    def kg(self):
-        return self.__kg
-
-    @kg.setter
-    def kg(self, new_kg):
-        if isinstance(new_kg, (int, float)):
-            self.__kg = new_kg
-        else:
-            raise ValueError("Ошибка! Неверный тип данных!")
-
-weight = KgToPounds(15)
-print(weight.to_pounds())
-print(weight.kg)
-
-weight.kg = 20
-print(weight.kg)
-weight.kg = ("100")
+C = "б"
+A = ["банан", "яблоко", "берёза", "баобаб", "коромысло", "б"]
+count = 0
+for string in A:
+    if len(string) > 1:
+        if string.startswith(C) and string.endswith(C):
+            count += 1
+print("Кол-тво элементов A, начинающихся и заканчивающихся на C: ", count)

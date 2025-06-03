@@ -1,26 +1,22 @@
-class Animal:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+class User:
+    def __init__(self, login, password):
+        self.Login = login
+        self.Password = password
 
-    def info(self):
-        print(f"\nИмя: {self.name}, возраст: {self.age}")
+    def current_user(self, login, password):
+        for user in list:
+            if login == self.Login and password == self.Password:
+                return user
 
-    def speak(self):
-        pass
+list = [
+    User("qwerty", "asdfg"),
+    User("wasd", "dfjhsgd"),
+    User("admin", "admin"),
+    User("martin", "martinwashere75"),
+    User("dima", "whereismypassword?")
+]
 
-class Dog(Animal):
-    def speak(self):
-        print("Я собака")
-
-class Cat(Animal):
-    def speak(self):
-        print("Я кошка")
-
-dog = Dog("Макс", 1)
-dog.info()
-dog.speak()
-
-cat = Cat("Муся", 1)
-cat.info()
-cat.speak()
+martin = User("martin", "martinwashere75")
+martin.current_user(martin.Login, martin.Password)
+print("Логин пользователя: ", martin.Login)
+print("Пароль пользователя: ", martin.Password)

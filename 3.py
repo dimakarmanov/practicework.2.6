@@ -1,19 +1,20 @@
-class BankAccount:
-    def __init__(self, initial_balance = 0):
-        self.__balance = initial_balance
+class Task:
+    def __init__(self, date_start, date_end, description):
+        self.Date_start = date_start
+        self.Date_end = date_end
+        self.Description = description
 
-    def deposit(self, amount):
-        if amount > 0:
-            self.__balance += amount
+list = [
+    Task("19.05.2025", "20.05.2025", "Математика"),
+    Task("20.05.2025", "20.05.2025", "Физкультура"),
+    Task("20.05.2025", "21.05.2025", "История"),
+    Task("21.05.2025", "22.05.2025", "Физика"),
+    Task("22.05.2025", "23.05.2025", "Информационные технологии")
+]
 
-    def withdraw(self, amount):
-        if 0 < amount <= self.__balance:
-            self.__balance -= amount
+latest_task = list[0]
+for task in list:
+    if task.Date_end > latest_task.Date_end:
+        latest_task = task
 
-    def get_balance(self):
-        return self.__balance
-
-account = BankAccount(100)
-account.deposit(200)
-account.withdraw(50)
-print(account.get_balance())
+print("Занятие, заканчивающиеся позже всех: ", latest_task.Description, latest_task.Date_start, latest_task.Date_end)

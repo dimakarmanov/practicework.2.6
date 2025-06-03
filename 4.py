@@ -1,12 +1,12 @@
-class Soda:
-    def __init__(self, supplement = "Апельсин"):
-        self.supplement = supplement
+list = [-7, 3, -10, 2, 1, -8, 8, -5, -3, 0]
+first_positive = None
+last_negative = None
 
-    def show_my_drink(self):
-        if self.supplement:
-            print(f"Газировка и {self.supplement}")
-        else:
-            print("Обычная газировка")
+for num in list:
+    if num > 0 and first_positive is None:
+        first_positive = num
 
-soda = Soda()
-soda.show_my_drink()
+    if num < 0:
+        last_negative = num
+
+print("Первый положительный и последний отрицательный: ", first_positive,last_negative)
